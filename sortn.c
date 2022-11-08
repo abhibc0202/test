@@ -1,37 +1,40 @@
-#include <stdio.h>    
-     
-sortnum()    
-{    
-    //Initialize array     
-    int arr[] = {5, 2, 8, 7, 1};     
-    int temp = 0;    
-        
-    //Calculate length of array arr    
-    int length = sizeof(arr)/sizeof(arr[0]);    
-        
-    //Displaying elements of original array    
-    printf("Elements of original array: \n");    
-    for (int i = 0; i < length; i++) {     
-        printf("%d ", arr[i]);     
-    }      
-        
-    //Sort the array in ascending order    
-    for (int i = 0; i < length; i++) {     
-        for (int j = i+1; j < length; j++) {     
-           if(arr[i] > arr[j]) {    
-               temp = arr[i];    
-               arr[i] = arr[j];    
-               arr[j] = temp;    
-           }     
-        }     
-    }    
-        
-    printf("\n");    
-        
-    //Displaying elements of array after sorting    
-    printf("Elements of array sorted in ascending order: \n");    
-    for (int i = 0; i < length; i++) {     
-        printf("%d ", arr[i]);    
-    }    
-    //return 0;    
-} 
+#include <stdio.h>
+
+sortnum()
+{
+    int arr1[100];
+    int n, i, j, tmp;
+	
+	
+       printf("\n\nsort elements of array in ascending order :\n ");
+       printf("----------------------------------------------\n");	
+
+    printf("Input the size of array : ");
+    scanf("%d", &n);
+
+       printf("Input %d elements in the array :\n",n);
+       for(i=0;i<n;i++)
+            {
+	      printf("element - %d : ",i);
+	      scanf("%d",&arr1[i]);
+	    }
+
+    for(i=0; i<n; i++)
+    {
+        for(j=i+1; j<n; j++)
+        {
+            if(arr1[j] <arr1[i])
+            {
+                tmp = arr1[i];
+                arr1[i] = arr1[j];
+                arr1[j] = tmp;
+            }
+        }
+    }
+    printf("\nElements of array in sorted ascending order:\n");
+    for(i=0; i<n; i++)
+    {
+        printf("%d  ", arr1[i]);
+    }
+	        printf("\n\n");
+}
